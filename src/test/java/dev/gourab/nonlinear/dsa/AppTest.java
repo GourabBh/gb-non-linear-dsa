@@ -6,7 +6,7 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 import dev.gourab.nonlinear.dsa.trees.model.BinarySearchTree;
-import dev.gourab.nonlinear.dsa.trees.service.utility.BSTTraversalUtility;
+import dev.gourab.nonlinear.dsa.trees.utility.BSTTraversalUtility;
 
 public class AppTest {
 	@Test

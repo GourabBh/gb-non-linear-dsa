@@ -7,9 +7,9 @@ import dev.gourab.nonlinear.dsa.trees.model.traversalContract.BSTTraversal;
 
 public class BSTService {
 
-	private final BSTTraversal bstTraversalFunc;
+	private final BSTTraversal<Integer> bstTraversalFunc;
 
-	public BSTService(BSTTraversal bstTraversalFunc) {
+	public BSTService(BSTTraversal<Integer> bstTraversalFunc) {
 		this.bstTraversalFunc = bstTraversalFunc;
 	}
 
