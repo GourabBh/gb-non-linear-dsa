@@ -6,7 +6,7 @@ import java.util.List;
 import dev.gourab.nonlinear.dsa.trees.model.TreeNode;
 import dev.gourab.nonlinear.dsa.trees.model.traversalContract.BSTTraversal;
 import dev.gourab.nonlinear.dsa.trees.model.traversalContract.BSTTraversalString;
-import dev.gourab.nonlinear.dsa.trees.model.utility.impl.BSTTraversalImplUtility;
+import dev.gourab.nonlinear.dsa.trees.utility.impl.BSTTraversalImplUtility;
 
 public class BSTTraversalUtility {
 

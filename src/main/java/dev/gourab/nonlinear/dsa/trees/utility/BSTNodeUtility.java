@@ -2,7 +2,7 @@ package dev.gourab.nonlinear.dsa.trees.utility;
 
 import dev.gourab.nonlinear.dsa.trees.model.TreeNode;
 import dev.gourab.nonlinear.dsa.trees.model.nodeContract.BSTNodeFunc;
-import dev.gourab.nonlinear.dsa.trees.model.utility.impl.BSTNodeImplUtility;
+import dev.gourab.nonlinear.dsa.trees.utility.impl.BSTNodeImplUtility;
 
 public class BSTNodeUtility {
 	private static TreeNode<Integer> searchBSTNode(TreeNode<Integer> rootNode, int nodeValue,

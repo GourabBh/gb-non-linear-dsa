@@ -1,4 +1,4 @@
-package dev.gourab.nonlinear.dsa.trees.model.utility.impl;
+package dev.gourab.nonlinear.dsa.trees.utility.impl;
 
 import java.util.ArrayList;
 import java.util.Collections;
