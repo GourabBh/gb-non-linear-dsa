@@ -42,4 +42,8 @@ public class BSTTraversalUtility {
 		return getTreeNodesAsString(treeNode, BSTTraversalImplUtility::levelOrder);
 	}
 
+	public static List<Integer> getPreOrderRepr(TreeNode<Integer> treeNode) {
+		return getTreeNodesAsList(treeNode, BSTTraversalImplUtility::preOrder);
+	}
+
 }

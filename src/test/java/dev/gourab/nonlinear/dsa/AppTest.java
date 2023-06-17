@@ -1,11 +1,14 @@
 package dev.gourab.nonlinear.dsa;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import org.junit.Test;
+import java.util.List;
 
-import dev.gourab.nonlinear.dsa.trees.model.BinarySearchTree;
+import org.junit.jupiter.api.Test;
+
+import dev.gourab.nonlinear.dsa.trees.model.TreeNode;
+import dev.gourab.nonlinear.dsa.trees.utility.BSTManipulateUtility;
 import dev.gourab.nonlinear.dsa.trees.utility.BSTTraversalUtility;
 
 public class AppTest {
@@ -16,8 +19,16 @@ public class AppTest {
 
 	@Test
 	public void shouldMatch() {
-		var bstAPI = new BinarySearchTree();
-		bstAPI.createBST(15, 0, 20);
-		assertEquals(15, BSTTraversalUtility.getInOrderRepr(bstAPI.getRootNode()).size());
+		TreeNode<Integer> rootNode = App.createBST(20, 0, 20);
+		assertEquals(20, BSTTraversalUtility.getInOrderRepr(rootNode).size());
+	}
+
+	@Test
+	public void checkWhetherNodeInsertedExists() {
+		int nodeValue = 17;
+		TreeNode<Integer> rootNode = App.createBST(16, 0, 20);
+		BSTManipulateUtility.insertBSTNodes(rootNode, nodeValue);
+		List<Integer> inOrderList = BSTTraversalUtility.getInOrderRepr(rootNode);
+		assertTrue(inOrderList.contains(nodeValue));
 	}
 }

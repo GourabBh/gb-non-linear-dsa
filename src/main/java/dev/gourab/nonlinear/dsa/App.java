@@ -4,6 +4,7 @@ import java.util.List;
 
 import dev.gourab.nonlinear.dsa.trees.model.BinarySearchTree;
 import dev.gourab.nonlinear.dsa.trees.model.TreeNode;
+import dev.gourab.nonlinear.dsa.trees.utility.BSTManipulateUtility;
 import dev.gourab.nonlinear.dsa.trees.utility.BSTNodeUtility;
 import dev.gourab.nonlinear.dsa.trees.utility.BSTTraversalUtility;
 
@@ -15,9 +16,7 @@ public class App {
 
 	public static void main(String[] args) {
 		// Creating a BST.
-		var bstAPI = new BinarySearchTree();
-		bstAPI.createBST(15, 0, 20);
-		TreeNode<Integer> treeNode = bstAPI.getRootNode();
+		TreeNode<Integer> treeNode = createBST(20, 0, 30);
 		if (treeNode == null) {
 			System.out.println("Error occured while creating the BST");
 			return;
@@ -46,5 +45,18 @@ public class App {
 		// Search BST Node
 		TreeNode<Integer> bstNode = BSTNodeUtility.searchBSTNode(treeNode, nodeValue);
 		System.out.println("Does BST Node " + nodeValue + " exists?: " + (bstNode != null ? "Yes" : "No"));
+
+		// Insert BST Node 17
+		BSTManipulateUtility.insertBSTNodes(treeNode, 17);
+		System.out.println(BSTTraversalUtility.getLevelOrderRepr(treeNode));
+
+		// PreOrder Traversal
+		System.out.println("PreOrder list: " + BSTTraversalUtility.getPreOrderRepr(treeNode));
+	}
+
+	public static TreeNode<Integer> createBST(int numberOfNodes, int minNumAllowed, int maxNumAllowed) {
+		var bstAPI = new BinarySearchTree();
+		bstAPI.createBST(numberOfNodes, minNumAllowed, maxNumAllowed);
+		return bstAPI.getRootNode();
 	}
 }

@@ -85,7 +85,7 @@ public class BSTTraversalImplUtility {
 			return "null";
 		}
 		int indexMax = getCountOfNodes(rootNode) - 1;
-		if (indexMax == -1) {
+		if (indexMax < 0) {
 			return "EMPTY";
 		}
 		var nodeValuesBuilder = new StringBuilder();
@@ -119,5 +119,25 @@ public class BSTTraversalImplUtility {
 			}
 		}
 		return "INVALID";
+	}
+
+	public static List<Integer> preOrder(TreeNode<Integer> rootNode) {
+		if (rootNode == null) {
+			return Collections.emptyList();
+		}
+		List<Integer> preOrder = new ArrayList<>();
+		Stack<TreeNode<Integer>> preOrderStack = new Stack<>();
+		preOrderStack.push(rootNode);
+		while (!preOrderStack.isEmpty()) {
+			var poppedNode = preOrderStack.pop();
+			preOrder.add(poppedNode.getValue());
+			if (poppedNode.getRight() != null) {
+				preOrderStack.push(poppedNode.getRight());
+			}
+			if (poppedNode.getLeft() != null) {
+				preOrderStack.push(poppedNode.getLeft());
+			}
+		}
+		return preOrder;
 	}
 }
