@@ -48,4 +48,40 @@ public class BSTNodeImplUtility {
 		}
 		return rootNode;
 	}
+
+	public static TreeNode<Integer> getSuccessorNode(TreeNode<Integer> rootNode, int nodeValue) {
+		if (rootNode == null) {
+			return null;
+		}
+		TreeNode<Integer> successorNode = null;
+		while (rootNode != null) {
+			if (nodeValue < rootNode.getValue()) {
+				successorNode = rootNode;
+				rootNode = rootNode.getLeft();
+			} else {
+				rootNode = rootNode.getRight();
+			}
+		}
+		return successorNode;
+	}
+
+	public static TreeNode<Integer> getPredecessorNode(TreeNode<Integer> rootNode, int nodeValue) {
+		if (rootNode == null) {
+			return null;
+		}
+		TreeNode<Integer> predecessorNode = null;
+		while (rootNode != null) {
+			if (nodeValue > rootNode.getValue()) {
+				predecessorNode = rootNode;
+				rootNode = rootNode.getRight();
+			} else {
+				rootNode = rootNode.getLeft();
+			}
+		}
+		return predecessorNode;
+	}
+
+	
+
+	
 }

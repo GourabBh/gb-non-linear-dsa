@@ -24,4 +24,12 @@ public class BSTNodeUtility {
 	public static TreeNode<Integer> searchBSTNode(TreeNode<Integer> rootNode, int nodeValue) {
 		return searchBSTNode(rootNode, nodeValue, BSTNodeImplUtility::searchBSTNode);
 	}
+
+	public static TreeNode<Integer> getBSTSuccessorNode(TreeNode<Integer> rootNode, int nodeValue) {
+		return searchBSTNode(rootNode, nodeValue, BSTNodeImplUtility::getSuccessorNode);
+	}
+
+	public static TreeNode<Integer> getBSTPredecessorNode(TreeNode<Integer> rootNode, int nodeValue) {
+		return searchBSTNode(rootNode, nodeValue, BSTNodeImplUtility::getPredecessorNode);
+	}
 }

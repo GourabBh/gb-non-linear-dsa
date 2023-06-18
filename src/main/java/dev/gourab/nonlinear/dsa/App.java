@@ -4,6 +4,7 @@ import java.util.List;
 
 import dev.gourab.nonlinear.dsa.trees.model.BinarySearchTree;
 import dev.gourab.nonlinear.dsa.trees.model.TreeNode;
+import dev.gourab.nonlinear.dsa.trees.utility.BSTConstructUtility;
 import dev.gourab.nonlinear.dsa.trees.utility.BSTManipulateUtility;
 import dev.gourab.nonlinear.dsa.trees.utility.BSTNodeUtility;
 import dev.gourab.nonlinear.dsa.trees.utility.BSTTraversalUtility;
@@ -52,6 +53,18 @@ public class App {
 
 		// PreOrder Traversal
 		System.out.println("PreOrder list: " + BSTTraversalUtility.getPreOrderRepr(treeNode));
+
+		List<Integer> preOrderList = List.of(8, 5, 1, 7, 10, 12);
+		TreeNode<Integer> treeNodeTwo = BSTConstructUtility.constructBSTFromPreOrder(preOrderList);
+		System.out.println("Level Order list: " + BSTTraversalUtility.getLevelOrderRepr(treeNodeTwo));
+
+		// Find the BST successor node.
+		System.out.println("Successor BST Node of " + nodeValue + " is: "
+				+ BSTNodeUtility.getBSTSuccessorNode(treeNode, nodeValue).getValue());
+
+		// Find the BST predecessor node.
+		System.out.println("Predecessor BST Node of " + nodeValue + " is: "
+				+ BSTNodeUtility.getBSTPredecessorNode(treeNode, nodeValue).getValue());
 	}
 
 	public static TreeNode<Integer> createBST(int numberOfNodes, int minNumAllowed, int maxNumAllowed) {

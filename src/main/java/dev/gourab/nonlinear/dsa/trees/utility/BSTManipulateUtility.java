@@ -10,10 +10,14 @@ public class BSTManipulateUtility {
 		if (bstManipulationFunc == null) {
 			throw new IllegalArgumentException("The BST Manipulate Func is invalid!");
 		}
-		bstManipulationFunc.insertBSTNode(rootNode, nodeValue);
+		bstManipulationFunc.manipulateBSTNode(rootNode, nodeValue);
 	}
 
 	public static void insertBSTNodes(TreeNode<Integer> rootNode, int nodeValue) {
 		manipulateBST(rootNode, nodeValue, BSTManipulateImplUtility::insertBSTNode);
+	}
+
+	public static void deleteBSTNodes(TreeNode<Integer> rootNode, int nodeValue) {
+		manipulateBST(rootNode, nodeValue, BSTManipulateImplUtility::deleteBSTNode);
 	}
 }

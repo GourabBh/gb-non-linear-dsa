@@ -8,7 +8,9 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 
 import dev.gourab.nonlinear.dsa.trees.model.TreeNode;
+import dev.gourab.nonlinear.dsa.trees.utility.BSTConstructUtility;
 import dev.gourab.nonlinear.dsa.trees.utility.BSTManipulateUtility;
+import dev.gourab.nonlinear.dsa.trees.utility.BSTNodeUtility;
 import dev.gourab.nonlinear.dsa.trees.utility.BSTTraversalUtility;
 
 public class AppTest {
@@ -30,5 +32,14 @@ public class AppTest {
 		BSTManipulateUtility.insertBSTNodes(rootNode, nodeValue);
 		List<Integer> inOrderList = BSTTraversalUtility.getInOrderRepr(rootNode);
 		assertTrue(inOrderList.contains(nodeValue));
+	}
+
+	@Test
+	public void shouldDeleteBSTNode() {
+		List<Integer> preOrderList = List.of(8, 5, 2, 1, 3, 4, 7, 6, 8, 12, 10, 13);
+		TreeNode<Integer> rootNode = BSTConstructUtility.constructBSTFromPreOrder(preOrderList);
+		int nodeToBeDeletedVal = 5;
+		BSTManipulateUtility.deleteBSTNodes(rootNode, nodeToBeDeletedVal);
+		assertEquals(null, BSTNodeUtility.searchBSTNode(rootNode, nodeToBeDeletedVal));
 	}
 }
